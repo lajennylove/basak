@@ -1,0 +1,29 @@
+# Build files
+/node_modules
+/vendor
+/public
+
+# Environment files
+.env
+.budfiles
+
+# Lock files
+package-lock.json
+yarn.lock
+composer.lock
+
+# Logs
+npm-debug.log
+yarn-error.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.idea
+.vscode
+.editorconfig
+*.sublime-project
+*.sublime-workspace
+

@@ -1,0 +1,10 @@
+.current-menu-item {
+    @apply w-auto px-1 bg-neutral-100 flex items-center justify-center cursor-pointer md:px-4 md:py-5;
+}
+
+.sub-menu {
+    @apply hidden absolute top-5 z-10 py-2 bg-white border-t border-b border-t-neutral-200 border-b-neutral-200 group-hover:flex group-hover:flex-col group-hover:items-center group-hover:justify-center;
+    a {
+        @apply w-48 h-auto hover:bg-stone-50;
+    }
+}
