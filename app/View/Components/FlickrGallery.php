@@ -16,8 +16,9 @@ class FlickrGallery extends Component
      * Create a new component instance.
      *
      * @param bool $full
+     * @param string $order
      */
-    public function __construct( bool $full = false )
+    public function __construct( bool $full = false, string $order = "desc" )
     {
 
         // Get the Flickr Grid amount from the options page if full is false
@@ -27,7 +28,7 @@ class FlickrGallery extends Component
         };
 
         // Initialize the Flickr Provider
-        $this->gallery = (new FlickrProvider())->getImages( $grid );
+        $this->gallery = (new FlickrProvider())->getImages( $grid, $order );
     }
 
 

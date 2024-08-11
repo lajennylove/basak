@@ -86,7 +86,8 @@ class FlickrProvider extends SageServiceProvider
             // Get values for repeater row
             $imageId = $photo['id'];
             $title = $photo['title'];
-            $tags = $photo['tags'];  // Assign tags directly
+            $tags = $photo['tags'];
+            $dateTaken = $photo['datetaken'];
 
             // Check whether the image already exists in the repeater
             $imageExists = false;
@@ -151,6 +152,7 @@ class FlickrProvider extends SageServiceProvider
                     'image_id' => $imageId,
                     'title' => $title,
                     'tags' => $tags,
+                    'date_taken' => $dateTaken,
                     'image' => $attachmentId
                 ], 'option');
 
@@ -167,23 +169,16 @@ class FlickrProvider extends SageServiceProvider
      * Get images from the repeater
      *
      * @param int $limit
+     * @param string $order
      * @return array
      */
-    public function getImages(int $limit = -1): array
+    public function getImages(int $limit = -1, string $order = 'desc'): array
     {
         $existingImages = get_field("flickr_images", "option");
         $images = array();
 
-        // Check if the limit is set to "all" or is greater than the actual number of existing images
-        if ($limit == -1 || $limit > count($existingImages)) {
-            $limit = count($existingImages);
-        }
-
-        // Use array_slice to get the desired number of images
-        $slicedImages = array_slice($existingImages, 0, $limit);
-
         // Loop over the sliced images stored in the repeater
-        foreach ($slicedImages as $existingImage) {
+        foreach ($existingImages as $existingImage) {
 
             // Get the large size of the image
             $tempImage = $existingImage['image']['sizes']['large'];
@@ -195,9 +190,33 @@ class FlickrProvider extends SageServiceProvider
             $images[] = array(
                 'large' => $tempImage,
                 'thumbnail' => $thumbnail,
+                'date_taken' => $existingImage['date_taken'],
                 'title' => $existingImage['title'],
                 'tags' => $existingImage['tags']
             );
+        }
+
+        // Sort the images based on the order
+        switch( $order ) {
+            case 'asc':
+                usort($images, function($a, $b) {
+                    return $a['date_taken'] <=> $b['date_taken'];
+                });
+                break;
+            case 'desc':
+                usort($images, function($a, $b) {
+                    return $b['date_taken'] <=> $a['date_taken'];
+                });
+                break;
+            case 'random':
+                shuffle($images);
+                break;
+        }
+
+        // Check if the limit is set to "all" or is greater than the actual number of images
+        if ($limit !== -1 && $limit <= count($images)) {
+            // Slice the sorted array according to the limit
+            $images = array_slice($images, 0, $limit);
         }
 
         return $images;

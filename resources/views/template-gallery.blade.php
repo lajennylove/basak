@@ -13,7 +13,7 @@
             <div class="wp-contents w-full h-auto px-2 md:w-2/3 md:px-0">
                 @include('partials.page-header')
                 @include('partials.content-page')
-                <x-flickrgallery full="true" />
+                <x-flickrgallery full="true" order="asc" />
             </div>
         </div>
     </div>

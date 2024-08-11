@@ -265,6 +265,21 @@ class SageSettings extends Field
                 "append" => "",
                 "maxlength" => "",
             ])
+            ->addText("date_taken", [
+                "label" => "Date Taken",
+                "instructions" => "Please provide the date the image was taken.",
+                "required" => 0,
+                "wrapper" => [
+                    "width" => "",
+                    "class" => "",
+                    "id" => "",
+                ],
+                "default_value" => "",
+                "placeholder" => "",
+                "prepend" => "",
+                "append" => "",
+                "maxlength" => "",
+            ])
             ->addImage("image", [
                 "label" => "Image",
                 "instructions" => "Select an image.",

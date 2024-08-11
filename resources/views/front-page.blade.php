@@ -13,7 +13,7 @@
             </div>
 
             <div class="w-full h-auto mt-3 py-5 px-2 md:w-2/3 md:mt-10 md:py-16 md:px-0">
-                <div class="text-3xl font-DMSerifDisplay font-bold md:text-4xl">This is how it all started…</div>
+                <!-- div class="text-3xl font-DMSerifDisplay font-bold md:text-4xl">This is how it all started…</div -->
                 <div class="mt-4 text-xl font-SourceSansPro md:mt-8">
                     {!! get_field('about', 'option') !!}
                 </div>
@@ -31,7 +31,7 @@
             <a href="https://www.flickr.com/people/{!! get_field('flickr_username', 'option') !!}/" target="_blank" class="text-base font-SourceSansPro text-stone-500 md:text-xl">
                 &commat;{!! get_field('flickr_username', 'option') !!}
             </a>
-            <x-flickrgallery />
+            <x-flickrgallery order="random" />
         </div>
     </div>
 
