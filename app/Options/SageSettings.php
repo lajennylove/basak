@@ -118,6 +118,50 @@ class SageSettings extends Field
                 "append" => "",
                 "maxlength" => "",
             ])
+            ->addSelect('show_flickr_module', [
+                'label' => 'Show Flickr Module',
+                'instructions' => 'Please select if you want to show the Flickr module.',
+                'required' => 0,
+                'conditional_logic' => [],
+                'wrapper' => [
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ],
+                'choices' => [
+                    'yes' => 'Yes',
+                    'no' => 'No',
+                ],
+                'default_value' => [],
+                'allow_null' => 0,
+                'multiple' => 0,
+                'ui' => 0,
+                'ajax' => 0,
+                'return_format' => 'value',
+                'placeholder' => '',
+            ])
+            ->addSelect('show_lastsposts_module', [
+                'label' => 'Show Lasts Posts Module',
+                'instructions' => 'Please select if you want to show the Lasts Posts module.',
+                'required' => 0,
+                'conditional_logic' => [],
+                'wrapper' => [
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ],
+                'choices' => [
+                    'yes' => 'Yes',
+                    'no' => 'No',
+                ],
+                'default_value' => [],
+                'allow_null' => 0,
+                'multiple' => 0,
+                'ui' => 0,
+                'ajax' => 0,
+                'return_format' => 'value',
+                'placeholder' => '',
+            ])
             ->addUrl('linkedin', [
                 'label' => 'LinkedIn',
                 'instructions' => 'Please provide your LinkedIn URL.',

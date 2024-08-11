@@ -23,15 +23,6 @@ class FrontPage extends Composer
      */
     public function with()
     {
-        $args = array(
-            'posts_per_page' => 3,
-            'orderby' => 'title',
-            'order' => 'ASC'
-        );
-
-        $query = new WP_Query( $args );
-        return [
-            'posts' => $query->posts,
-        ];
+        //
     }
 }

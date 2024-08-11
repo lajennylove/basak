@@ -5,13 +5,13 @@
             <p class="text-stone-500">{!! get_field('footer_col_1_content', 'option') !!}</p>
             <div class="w-full h-auto mt-3 py-3 flex flex-row items-center justify-center md:mt-5">
                 <a class="w-1/4 h-auto flex items-center justify-center" href="{!! get_field('linkedin', 'option') !!}" target="_blank">
-                    <x-socialicon icon="linkedin" size="w-8 h-8" />
+                    <x-social-icon icon="linkedin" size="w-8 h-8" />
                 </a>
                 <a class="w-1/4 h-auto flex items-center justify-center" href="{!! get_field('facebook', 'option') !!}" target="_blank">
-                    <x-socialicon icon="facebook" size="w-8 h-8" />
+                    <x-social-icon icon="facebook" size="w-8 h-8" />
                 </a>
                 <a class="w-1/4 h-auto flex items-center justify-center" href="https://www.flickr.com/people/{!! get_field('flickr_username', 'option') !!}/" target="_blank">
-                    <x-socialicon icon="flickr" size="w-8 h-8" />
+                    <x-social-icon icon="flickr" size="w-8 h-8" />
                 </a>
             </div>
         </div>
