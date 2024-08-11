@@ -32,7 +32,7 @@
 </div>
 <div class="w-full h-auto py-5 px-3 flex flex-col items-center justify-center md:py-14 md:px-0">
     <div class="w-full h-auto max-w-7xl flex flex-col items-center justify-center md:flex-row">
-        Copyright {{ date('Y') }} | {!! bloginfo( 'title' ); !!}
+        &copy; {{ date('Y') }} | {!! bloginfo( 'title' ); !!}
     </div>
 </div>
 <div class="w-9/12"></div>
