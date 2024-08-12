@@ -1,5 +1,5 @@
 @if (! post_password_required())
-  <section id="comments" class="comments">
+  <section id="comments" class="comments w-full h-auto py-8 border-t border-b-neutral-200">
     @if (have_comments())
       <h2>
         {!! /* translators: %1$s is replaced with the number of comments and %2$s with the post title */ sprintf(_nx('%1$s response to &ldquo;%2$s&rdquo;', '%1$s responses to &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'sage'), get_comments_number() === 1 ? _x('One', 'comments title', 'sage') : number_format_i18n(get_comments_number()), '<span>' . get_the_title() . '</span>') !!}

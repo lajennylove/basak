@@ -201,6 +201,19 @@ class SageSettings extends Field
                 'default_value' => '',
                 'placeholder' => '',
             ])
+            ->addUrl('goodreads', [
+                'label' => 'Goodreads',
+                'instructions' => 'Please provide your Goodreads URL.',
+                'required' => 0,
+                'conditional_logic' => [],
+                'wrapper' => [
+                    'width' => '',
+                    'class' => '',
+                    'id' => '',
+                ],
+                'default_value' => '',
+                'placeholder' => '',
+            ])
             ->addTab("Flickr Settings")
             ->addText("flickr_api_key", [
                 "label" => "Flickr API Key",

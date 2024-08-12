@@ -1,3 +1,3 @@
 <!-- Social Icon -->
-    @include('components.social-icons.'. $icon )
+    @include('components.social-icons.' . $icon)
 <!-- // End Social Icon -->

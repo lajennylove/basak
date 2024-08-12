@@ -33,3 +33,7 @@ a .aligncenter {
 .wpcf7-text, .wpcf7-textarea {
     @apply w-full p-3 border border-black text-sm leading-relaxed md:text-base;
 }
+
+.e-content a, .page-content a{
+    @apply text-neutral-400;
+}
