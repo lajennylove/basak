@@ -34,6 +34,67 @@ a .aligncenter {
     @apply w-full p-3 border border-black text-sm leading-relaxed md:text-base;
 }
 
-.e-content a, .page-content a{
+.e-content, .page-content {
+    @apply my-4 text-sm leading-relaxed md:text-base;
+
+    blockquote {
+        @apply relative my-10 pt-1 pl-12 text-base font-DMSerifDisplay italic;
+        &::before {
+            content: "“";
+            @apply absolute left-0 top-0 text-6xl font-DMSerifDisplay text-gray-400;
+        }
+    }
+
+    ul {
+        @apply list-disc list-inside p-4;
+
+        & > li::marker {
+            @apply text-gray-400;
+        }
+    }
+
+    ol {
+        @apply list-decimal list-inside p-4;
+
+        & > li::marker {
+            @apply text-gray-400;
+        }
+    }
+
+    li {
+        @apply p-2;
+    }
+
+    h1 {
+        @apply text-4xl font-bold mt-6 mb-4;
+    }
+
+    h2 {
+        @apply text-3xl font-semibold mt-5 mb-3;
+    }
+
+    h3 {
+        @apply text-2xl font-semibold mt-4 mb-2;
+    }
+
+    h4 {
+        @apply text-xl font-medium mt-3 mb-2;
+    }
+
+    h5 {
+        @apply text-lg font-medium mt-2 mb-1;
+    }
+
+    h6 {
+        @apply text-base font-medium mt-1 mb-1;
+    }
+
+    pre {
+        @apply bg-gray-100 p-4 rounded text-base font-mono;
+    }
+
+
+    a {
     @apply text-neutral-400;
+    }
 }
