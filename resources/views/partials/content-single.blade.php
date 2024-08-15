@@ -8,7 +8,12 @@
   </header>
 
   <div class="e-content pb-8">
-    @php(the_content())
+      @if( has_post_thumbnail() )
+            <div class="w-full h-auto mt-6 mb-8">
+                {!! the_post_thumbnail('large', ['class' => 'w-full h-auto object-cover my-5']) !!}
+            </div>
+      @endif
+      @php(the_content())
   </div>
 
   <footer>
